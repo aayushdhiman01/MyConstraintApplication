@@ -6,122 +6,160 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_v_10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".10" />
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_v_90"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".90" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_h_10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_h_90"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.9" />
 
     <ImageView
         android:id="@+id/imgspace"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:src="@drawable/spacestation"
-
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="30dp"/>
+        app:layout_constraintEnd_toStartOf="@+id/imgRockets"
+        app:layout_constraintHorizontal_bias="0.697"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guide_h_10" />
 
     <ImageView
         android:id="@+id/imgRockets"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginLeft="60dp"
-        android:layout_marginTop="30dp"
+        android:layout_width="0dp"
+        android:layout_height="78dp"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="4dp"
         android:layout_toRightOf="@id/imgspace"
-        android:src="@drawable/rocket" />
+        android:src="@drawable/rocket"
+        app:layout_constraintEnd_toStartOf="@+id/imgRovers"
+        app:layout_constraintHorizontal_bias="0.272"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toEndOf="@+id/imgspace"
+        app:layout_constraintStart_toStartOf="@id/guide_v_10"
+        app:layout_constraintTop_toTopOf="@+id/guide_h_10" />
 
     <ImageView
         android:id="@+id/imgRovers"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginLeft="60dp"
-        android:layout_marginTop="30dp"
+        android:layout_width="81dp"
+        android:layout_height="77dp"
+        android:layout_marginStart="208dp"
+        android:layout_marginTop="4dp"
         android:layout_toRightOf="@id/imgRockets"
-        android:src="@drawable/rovers" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/tvSpaceStation"
-        android:text="@string/Space_Station"
-        android:textStyle="bold"
-        android:layout_marginLeft="25dp"
-        android:layout_below="@id/imgspace"/>
+        android:src="@drawable/rovers"
+        app:layout_constraintRight_toLeftOf="@+id/imgRockets"
+        app:layout_constraintStart_toStartOf="@id/guide_v_10"
+        app:layout_constraintTop_toTopOf="@+id/guide_h_10" />
 
-    <TextView
-        android:id="@+id/tvRockets"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/imgRockets"
-        android:layout_marginLeft="67dp"
-        android:layout_toRightOf="@id/tvSpaceStation"
-        android:text="@string/Rocket"
-        android:textStyle="bold" />
-    <TextView
-        android:id="@+id/tvRovers"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/imgRovers"
-        android:layout_marginLeft="85dp"
-        android:layout_toRightOf="@id/tvRockets"
-        android:text="@string/Rovers"
-        android:textStyle="bold" />
+    <!--    <TextView-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:id="@+id/tvSpaceStation"-->
+    <!--        android:text="@string/Space_Station"-->
+    <!--        android:textStyle="bold"-->
+    <!--        android:layout_marginLeft="25dp"-->
+    <!--        android:layout_below="@id/imgspace"/>-->
 
-    <TextView
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:background="@color/teal_200"
-        android:id="@+id/DCA"
-        android:textStyle="bold"
-        android:gravity="center"
-        android:text="@string/DCA"
-        android:layout_below="@id/tvRockets"
-        android:layout_marginLeft="40dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginTop="70dp"
-        />
-    <TextView
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:id="@+id/MARS"
-        android:background="@color/teal_200"
-        android:textStyle="bold"
-        android:gravity="center"
-        android:text="@string/MARS"
-        android:layout_marginLeft="40dp"
-        android:layout_toRightOf="@id/DCA"
-        android:layout_below="@id/tvSpaceStation"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginTop="70dp"
-        />
-    <ImageView
-        android:id="@+id/imgArrow"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginLeft="60dp"
-        android:layout_marginTop="120dp"
-        android:layout_toRightOf="@id/imgspace"
-        android:layout_below="@id/imgspace"
-        android:src="@drawable/arrows" />
+    <!--    <TextView-->
+    <!--        android:id="@+id/tvRockets"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_below="@id/imgRockets"-->
+    <!--        android:layout_marginLeft="67dp"-->
+    <!--        android:layout_toRightOf="@id/tvSpaceStation"-->
+    <!--        android:text="@string/Rocket"-->
+    <!--        android:textStyle="bold" />-->
+    <!--    <TextView-->
+    <!--        android:id="@+id/tvRovers"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_below="@id/imgRovers"-->
+    <!--        android:layout_marginLeft="85dp"-->
+    <!--        android:layout_toRightOf="@id/tvRockets"-->
+    <!--        android:text="@string/Rovers"-->
+    <!--        android:textStyle="bold" />-->
 
-    <Switch
-        android:id="@+id/switch1"
-        android:layout_width="178dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/DCA"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="30dp"
-        android:background="@color/purple_200"
-        android:paddingLeft="10dp"
-        android:text="@string/OneWay" />
+    <!--    <TextView-->
+    <!--        android:layout_width="150dp"-->
+    <!--        android:layout_height="150dp"-->
+    <!--        android:background="@color/teal_200"-->
+    <!--        android:id="@+id/DCA"-->
+    <!--        android:textStyle="bold"-->
+    <!--        android:gravity="center"-->
+    <!--        android:text="@string/DCA"-->
+    <!--        android:layout_below="@id/tvRockets"-->
+    <!--        android:layout_marginLeft="40dp"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        android:layout_marginTop="70dp"-->
+    <!--        />-->
+    <!--    <TextView-->
+    <!--        android:layout_width="150dp"-->
+    <!--        android:layout_height="150dp"-->
+    <!--        android:id="@+id/MARS"-->
+    <!--        android:background="@color/teal_200"-->
+    <!--        android:textStyle="bold"-->
+    <!--        android:gravity="center"-->
+    <!--        android:text="@string/MARS"-->
+    <!--        android:layout_marginLeft="40dp"-->
+    <!--        android:layout_toRightOf="@id/DCA"-->
+    <!--        android:layout_below="@id/tvSpaceStation"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        android:layout_marginTop="70dp"-->
+    <!--        />-->
+    <!--    <ImageView-->
+    <!--        android:id="@+id/imgArrow"-->
+    <!--        android:layout_width="80dp"-->
+    <!--        android:layout_height="80dp"-->
+    <!--        android:layout_marginLeft="60dp"-->
+    <!--        android:layout_marginTop="120dp"-->
+    <!--        android:layout_toRightOf="@id/imgspace"-->
+    <!--        android:layout_below="@id/imgspace"-->
+    <!--        android:src="@drawable/arrows" />-->
 
-    <TextView
-        android:layout_width="120dp"
-        android:layout_height="wrap_content"
-        android:background="@color/purple_200"
-        android:id="@+id/Traveller"
-        android:paddingLeft="10dp"
-        android:textStyle="bold"
-        android:text="@string/Traveller"
-        android:layout_below="@id/switch1"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="30dp"
-        />
+    <!--    <Switch-->
+    <!--        android:id="@+id/switch1"-->
+    <!--        android:layout_width="178dp"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_below="@id/DCA"-->
+    <!--        android:layout_marginLeft="40dp"-->
+    <!--        android:layout_marginTop="30dp"-->
+    <!--        android:background="@color/purple_200"-->
+    <!--        android:paddingLeft="10dp"-->
+    <!--        android:text="@string/OneWay" />-->
+
+    <!--    <TextView-->
+    <!--        android:layout_width="120dp"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:background="@color/purple_200"-->
+    <!--        android:id="@+id/Traveller"-->
+    <!--        android:paddingLeft="10dp"-->
+    <!--        android:textStyle="bold"-->
+    <!--        android:text="@string/Traveller"-->
+    <!--        android:layout_below="@id/switch1"-->
+    <!--        android:layout_marginLeft="40dp"-->
+    <!--        android:layout_marginTop="30dp"-->
+    <!--        />-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
